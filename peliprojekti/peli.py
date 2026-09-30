@@ -1,61 +1,16 @@
+# LISÄÄ PAHVI JA BIOJÄTE
+# "Pelin voi pelata läpi ja vähintään 3 erilaista reittiä"
+
 import random
 
+from roska import Roska
+from paikka import Paikka
+from pelaaja import Pelaaja
 
-def etsi_roska(roskat, astiat):
+
+def etsi_roska(roskat):
     i = random.randint(0, len(roskat) - 1)
-    return roskat[i], astiat[i]
-
-
-def kierrätä(roska, oikea_astia, kierrätetyt):
-    print("Löysit:", roska)
-
-    vastaus = input(
-        "Mihin astiaan se kuuluu? "
-        "(lasijäte/muovijäte/metallijäte/paperijäte/elektroniikkajäte) ").lower()
-
-    if vastaus == oikea_astia:
-        print("Oikein! Sait pisteen.")
-        kierrätetyt.append(roska)
-        return True
-    else:
-        print("Väärin! Peli päättyy.")
-        return False
-
-
-def näytä_kierrätetyt(kierrätetyt):
-    print("Olet kierrättänyt oikein seuraavat:")
-
-    if len(kierrätetyt) == 0:
-        print("Et ole vielä kierrättänyt mitään.")
-    else:
-        for roska in kierrätetyt:
-            print("-", roska)
-
-
-def näytä_pisteet(kierrätetyt):
-    print("Pisteesi:", len(kierrätetyt))
-
-
-def vaihda_sijaintia(sijainti):
-    print("Nykyinen sijaintisi:", sijainti)
-
-    print("Minne haluat mennä?")
-    print("Keittiö")
-    print("Piha")
-    print("Kauppa")
-
-    valinta = input("Kirjoita sijainti: ").lower()
-
-    if valinta == "keittiö":
-        sijainti = "keittiö"
-    elif valinta == "piha":
-        sijainti = "piha"
-    elif valinta == "kauppa":
-        sijainti = "kauppa"
-    else:
-        print("Virheellinen sijainti.")
-
-    return sijainti
+    return roskat[i]
 
 
 nimi = input("Anna pelaajan nimi: ")
@@ -70,7 +25,7 @@ if ikä < 12:
 else:
     print("Tervetuloa " + nimi + "!")
     print()
-    print("Tämä on kierrätyspeli.")
+    print("Tämä on kierrätyspeli nimeltään Kierrätysseikkailu.")
     print()
     print("Tavoitteesi on löytää roskia ja kierrättää ne oikeisiin astioihin.")
     print()
@@ -79,39 +34,46 @@ else:
     print()
 
 
-    roskat = ["lasipullo", "muovipussi", "tölkki", "sanomalehti", "rikkinäinen puhelin"]
-    astiat = ["lasijäte", "muovijäte", "metallijäte", "paperijäte", "elektroniikkajäte"]
+    roskat = [
+        Roska("lasipullo", "lasijäte"), 
+        Roska("muovipussi", "muovijäte"), 
+        Roska("tölkki", "metallijäte"), 
+        Roska("sanomalehti", "paperijäte"), 
+        Roska("rikkinäinen puhelin", "elektroniikkajäte"),
+        Roska("pahvilaatikko", "pahvijäte"),
+        Roska("omena", "biojäte")]
 
-    kierrätetyt = []
+    paikat = [Paikka("keittiö"), 
+              Paikka("piha"), 
+              Paikka("kauppa")]
 
-    sijainti = "keittiö"
+    pelaaja = Pelaaja(nimi, paikat[0])
 
     komento = ""
 
     while komento != "lopeta":
-
-        print("--- PÄÄVALIKKO ---")
-        print("Sijaintisi:", sijainti)
+        print ("--- PÄÄVALIKKO ---")
+        print("Sijaintisi:", pelaaja.sijainti.nimi)
         print("Etsi - Etsi roska ja kierrätä se")
         print("Inventaario - Näytä kierrättämäsi roskat")
         print("Pisteet - Näytä pisteesi")
         print("Liiku - Vaihda sijaintia")
         print("Lopeta - Lopettaa pelin")
- 
+
         komento = input("Anna komento: ").lower()
- 
+
         if komento == "etsi":
-            roska, oikea_astia = etsi_roska(roskat, astiat)
-            onnistui = kierrätä(roska, oikea_astia, kierrätetyt)
+            roska = etsi_roska(roskat)
+            onnistui = pelaaja.kierrätä(roska)
             if not onnistui:
                 komento = "lopeta"
         elif komento == "inventaario":
-            näytä_kierrätetyt(kierrätetyt)
+            pelaaja.näytä_kierrätetyt()
         elif komento == "pisteet":
-            näytä_pisteet(kierrätetyt)
+            pelaaja.näytä_pisteet()
         elif komento == "liiku":
-            sijainti = vaihda_sijaintia(sijainti)
+            pelaaja.vaihda_sijaintia(paikat)
         elif komento == "lopeta":
             print("Lopetetaan peli.")
-        else: print("Virheellinen valinta.")
-
+        else:
+            print("Virheellinen komento.")
