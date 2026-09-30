@@ -15,7 +15,15 @@ Peli liittyy ainakin YK:n kestävän kehityksen Agenda2030 tavoitteeseen 12. Vas
 Ohjelman käynnistyessä se kysyy pelaajalta nimen ja iän. Mikäli pelaaja on alle 12-vuotias, peli sulkeutuu. Muussa tapauksessa peli toivottaa pelaajan tervetulleeksi ja tulostaa päävalikon. Päävalikossa on kaikki oleellinen ja pelaaja antaa komentoja kunnes kirjoittaa "lopeta", jolloin peli sulkeutuu.
 
 # Pelin toiminnallisuudet
-etsi - etsii satunnaisen roskan, jonka jälkeen peli kysyy mihin se kuuluu lajitella. Pelaajan täytyy tietää mihin jätteeseen roska kuuluu ja kirjoittaa se. Oikeasta vastauksesta saa yhden pisteen, ja väärästä vastauksesta peli päättyy.
+Etsi - etsii satunnaisen roskan, jonka jälkeen peli kysyy mihin se kuuluu lajitella. Pelaajan täytyy tietää mihin jätteeseen roska kuuluu ja kirjoittaa se. Oikeasta vastauksesta saa yhden pisteen, ja väärästä vastauksesta peli päättyy.
+
+Inventaario - näyttää kaikki tähän mennessä kierrätetyt roskat.
+
+Pisteet - näyttää pelaajan pisteet
+
+Liiku - tarjoaa erilaisia sijainteja joihin pelaaja voi mennä.
+
+Lopeta - lopettaa pelin.
 
 # Rakenne
 Koodi on jaettu eri moduuleihin. Eri luokat ovat omissa moduuleissaan.
