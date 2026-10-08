@@ -23,6 +23,8 @@ Pisteet - näyttää pelaajan pisteet
 
 Liiku - tarjoaa erilaisia sijainteja joihin pelaaja voi mennä.
 
+Tallenna - voit tallentaa pelin tilanteen nimelläsi. Jos lataat tallennuksen myöhemmin, käytä samaa nimeä ja peli tunnistaa sen.
+
 Lopeta - lopettaa pelin.
 
 # Rakenne

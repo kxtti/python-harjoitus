@@ -1,0 +1,7 @@
+Tämä on kierrätyspeli nimeltään Kierrätysseikkailu.
+
+Tavoitteesi on löytää roskia ja kierrättää ne oikeisiin astioihin.
+
+Jos vastaat väärin, peli päättyy.
+
+Onnea matkaan!
