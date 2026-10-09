@@ -1,13 +1,25 @@
 --- PELIOHJEET ---
 
-Etsi - Etsi satunnainen roska ja kierrätä se.
+Pelin alussa valitset yhden kolmesta reitistä.
+
+Kotireitti - Helppo - 5 roskaa
+Kaupunkireitti - Keskivaikea - 10 roskaa
+Luontoreitti - Vaikea - 15 roskaa
+
+Jokaisella reitillä on kolme eri sijaintia.
+
+Etsi - Etsi nykyisestä sijainnistasi satunnainen roska ja kierrätä se.
 
 Inventaario - Näytä kaikki oikein kierrättämäsi roskat.
 
 Pisteet - Näytä pisteidesi määrä.
 
-Liiku - Vaihda sijaintia.
+Liiku - Vaihda sijaintia valitsemasi reitin sisällä.
 
 Tallenna - Tallenna pelin nykyinen tilanne.
 
 Lopeta - Lopeta peli.
+
+Kun olet kierrättänyt valitsemasi reitin vaatiman määrän roskia oikein, läpäiset pelin!
+
+Jos lajittelet roskan väärin, peli päättyy!

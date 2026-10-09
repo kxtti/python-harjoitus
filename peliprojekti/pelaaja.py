@@ -1,51 +1,93 @@
 class Pelaaja:
 
-# Pelaajalle tallennetaan nimi, kierrätetyt roskat ja sijainti
+    # Pelaajalle tallennetaan nimi, kierrätetyt roskat ja sijainti
     def __init__(self, nimi, sijainti):
         self.nimi = nimi
         self.kierrätetyt = []
         self.sijainti = sijainti
 
-# Kysyy minne roska kuuluu ja tarkistaa onko vastaus oikein
+
+    # Kysyy minne roska kuuluu ja tarkistaa onko vastaus oikein
     def kierrätä(self, roska):
         print()
         print("Löysit:", roska.nimi)
         print()
 
-        vastaus = input("Mihin astiaan se kuuluu? (lasijäte/muovijäte/metallijäte/paperijäte/elektroniikkajäte/biojäte/pahvijäte): ").lower()
-        if vastaus == roska.oikea_astia:
-            print()
-            print("Oikein! Sait yhden pisteen.")
-            print()
-            self.kierrätetyt.append(roska.nimi)
-            return True
-        else:
-            print()
-            print("Väärin! Peli päättyy.")
-            print()
-            return False
+        # Pelissä olevat jäteastiat
+        astiat = [
+            "lasijäte",
+            "muovijäte",
+            "metallijäte",
+            "paperijäte",
+            "elektroniikkajäte",
+            "biojäte",
+            "pahvijäte"
+        ]
 
-# Näyttää kaikki siihen mennessä kierrätetyt
+        # Kysytään vastausta kunnes pelaaja antaa oikean jäteastian nimen
+        while True:
+            vastaus = input(
+                "Mihin astiaan se kuuluu? "
+                "(lasijäte/muovijäte/metallijäte/paperijäte/"
+                "elektroniikkajäte/biojäte/pahvijäte): "
+            ).lower()
+
+            # Tarkistetaan onko kirjoitettu jäteastia olemassa
+            if vastaus not in astiat:
+                print()
+                print("Tuollaista jäteastiaa ei ole.")
+                print("Yritä uudelleen.")
+                print()
+
+            # Oikea jäteastia
+            elif vastaus == roska.oikea_astia:
+                print()
+                print("Oikein! Sait yhden pisteen.")
+                print()
+
+                self.kierrätetyt.append(roska.nimi)
+
+                return True
+
+            # Olemassa oleva, mutta väärä jäteastia
+            else:
+                print()
+                print("Väärin! Peli päättyy.")
+                print()
+
+                return False
+
+
+    # Näyttää kaikki siihen mennessä kierrätetyt
     def näytä_kierrätetyt(self):
         print()
-        print("Olet kierrättänyt:")
+        print("--- INVENTAARIO ---")
+        print()
 
         if len(self.kierrätetyt) == 0:
-            print()
             print("Et ole kierrättänyt vielä mitään.")
             print()
+
         else:
             for roska in self.kierrätetyt:
                 print("-", roska)
 
-# Näyttää pisteet oikein kierrätetyistä roskista
+            print()
+
+
+    # Näyttää pisteet oikein kierrätetyistä roskista
     def näytä_pisteet(self):
+        print()
+        print("--- PISTEET ---")
         print()
         print("Pisteesi:", len(self.kierrätetyt))
         print()
 
-# Antaa pelaajan vaihtaa nykyistä sijaintia
+
+    # Antaa pelaajan vaihtaa nykyistä sijaintia
     def vaihda_sijaintia(self, paikat):
+        print()
+        print("--- LIIKKUMINEN ---")
         print()
         print("Nykyinen sijaintisi:", self.sijainti.nimi)
         print()
@@ -53,21 +95,28 @@ class Pelaaja:
         print("Minne haluat mennä?")
         print()
 
-# Tulostetaan kaikki sijainnit
+        # Tulostetaan kaikki reitin sijainnit
         for paikka in paikat:
-            print(paikka.nimi)
+            print("-", paikka.nimi)
+
         print()
-        valinta = input("Kirjoita sijainti:").lower()
+
+        valinta = input("Kirjoita sijainti: ").lower()
 
         löytyi = False
 
-# Etsii sijainnin paikkalistasta
+        # Etsii sijainnin paikkalistasta
         for paikka in paikat:
             if paikka.nimi.lower() == valinta:
                 self.sijainti = paikka
                 löytyi = True
 
-        if not löytyi:
+        print()
+
+        if löytyi:
+            print("Siirryit paikkaan:", self.sijainti.nimi)
             print()
+
+        else:
             print("Virheellinen sijainti.")
             print()

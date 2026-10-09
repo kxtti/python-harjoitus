@@ -1,7 +1,16 @@
 Tämä on kierrätyspeli nimeltään Kierrätysseikkailu.
 
-Tavoitteesi on löytää roskia ja kierrättää ne oikeisiin astioihin.
+Tavoitteesi on valita yksi kolmesta reitistä, liikkua reitin eri paikoissa, etsiä roskia
+ja kierrättää löytämäsi roskat oikeisiin astioihin.
 
-Jos vastaat väärin, peli päättyy.
+Pelissä on kolme vaikeustasoa.
+
+Kotireitti on helppo ja sen läpäisyyn vaaditaan 5 oikein kierrätettyä roskaa.
+
+Kaupunkireitti on keskivaikea ja sen läpäisyyn vaaditaan 10 oikein kierrätettyä roskaa.
+
+Luontoreitti on vaikea ja sen läpäisyyn vaaditaan 15 oikein kierrätettyä roskaa.
+
+Jos vastaat väärin, peli päättyy!
 
 Onnea matkaan!
