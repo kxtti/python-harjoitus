@@ -1,8 +1,8 @@
 import random
 
-from roska import Roska
-from paikka import Paikka
-from pelaaja import Pelaaja
+from ohjelmisto1.peliprojekti.roska import Roska
+from ohjelmisto1.peliprojekti.paikka import Paikka
+from ohjelmisto1.peliprojekti.pelaaja import Pelaaja
 
 
 # Valitsee roskalistasta satunnaisen roskan
