@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koiran Kengät Oy - Tarkistukset</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .screenshots h1 {
+            text-align: center;
+        }
+
+        .screenshots h2 {
+            margin-top: 40px;
+        }
+
+        .screenshots img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #8B6245;
+        }
+
+        .screenshots figure {
+            margin: 20px 0 35px;
+        }
+
+        .screenshots figcaption {
+            margin-top: 10px;
+        }
+
+        .screenshots pre {
+            background: #E7D4BB;
+            padding: 20px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a class="logo" href="index.html">
+                <img src="images/logo.jpg" alt="Koiran Kengät Oy">
+            </a>
+            <nav>
+                <a href="index.html">Etusivu</a>
+                <a href="products.html">Tuotteet</a>
+                <a href="contact.html">Yhteystiedot</a>
+            </nav>
+        </header>
+
+        <main class="screenshots">
+            <h1>Verkkosivuston tarkistukset</h1>
+            <p>Tällä sivulla esitellään Koiran Kengät Oy:n
+            verkkosivustolle tehdyt HTML-, CSS- ja
+            saavutettavuustarkistukset.</p>
+
+            <h2>HTML-validointi</h2>
+
+            <figure>
+                <img src="screenshots/html-index.png"
+                     alt="Etusivun HTML-validoinnin tulos">
+                <figcaption>Etusivu - HTML-validointi</figcaption>
+            </figure>
+
+            <figure>
+                <img src="screenshots/html-products.png"
+                     alt="Tuotesivun HTML-validoinnin tulos">
+                <figcaption>Tuotteet - HTML-validointi</figcaption>
+            </figure>
+
+            <figure>
+                <img src="screenshots/html-contact.png"
+                     alt="Yhteystietosivun HTML-validoinnin tulos">
+                <figcaption>Yhteystiedot - HTML-validointi</figcaption>
+            </figure>
+
+            <h2>CSS-validointi</h2>
+
+            <figure>
+                <img src="screenshots/css.png"
+                     alt="CSS-validoinnin tulos">
+                <figcaption>CSS-validointi</figcaption>
+            </figure>
+
+            <h2>WAVE-saavutettavuustarkistus</h2>
+
+            <figure>
+                <img src="screenshots/wave-index.png"
+                     alt="Etusivun WAVE-tarkistuksen tulos">
+                <figcaption>Etusivu - WAVE</figcaption>
+            </figure>
+
+            <figure>
+                <img src="screenshots/wave-products.png"
+                     alt="Tuotesivun WAVE-tarkistuksen tulos">
+                <figcaption>Tuotteet - WAVE</figcaption>
+            </figure>
+
+            <figure>
+                <img src="screenshots/wave-contact.png"
+                     alt="Yhteystietosivun WAVE-tarkistuksen tulos">
+                <figcaption>Yhteystiedot - WAVE</figcaption>
+            </figure>
+
+            <h2>Käytetty fontti</h2>
+            <p>Verkkosivustolla käytetään Trebuchet MS -fonttia.
+            Jos fonttia ei ole saatavilla, käytetään
+            sans-serif-varafonttia.</p>
+
+            <pre><code>body {
+    font-family: "Trebuchet MS", sans-serif;
+}</code></pre>
+        </main>
+    </div>
+</body>
+</html>
