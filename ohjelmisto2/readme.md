@@ -7,4 +7,6 @@
 
 Tein tehtävät 1,2,3,4,5
 
-## Moduuli
+## Moduuli 7 (JS 3)
+
+Tein tehtävät 1,2,3,4,5
